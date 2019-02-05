@@ -85,7 +85,7 @@ static const int MO5_AUTOSTART_KEYS[MO5_AUTOSTART_KEYS_LENGTH] =
 static int current_mo5_key_pos = -1;
 
 static const struct retro_variable prefs[] = {
-    { PACKAGE_NAME"_rom", "Thomson flavor; TO8|TO8D|TO9|TO9+|MO5" },
+    { PACKAGE_NAME"_rom", "Thomson flavor; TO8|TO8D|TO9|TO9+|MO5|MO6" },
     { PACKAGE_NAME"_autorun", "Auto run game; disabled|enabled" },
     { PACKAGE_NAME"_floppy_write_protect", "Floppy write protection; enabled|disabled" },
     { PACKAGE_NAME"_tape_write_protect", "Tape write protection; enabled|disabled" },
@@ -472,6 +472,10 @@ static void check_variables(void)
     else if (strcmp(var.value, "MO5") == 0)
     {
       SetThomsonFlavor(MO5);
+    }
+    else if (strcmp(var.value, "MO6") == 0)
+    {
+      SetThomsonFlavor(MO6);
     }
   }
 #ifdef THEODORE_DASM
